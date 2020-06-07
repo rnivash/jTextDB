@@ -21,11 +21,12 @@ public class Read {
 		    String line = null;
 		    
 		    while ((line = reader.readLine()) != null) {
-		        System.out.println(line);
+		        String[] row = BaseFile.Decode(line);
+		        result.add(row);
 		    }
 		    
-		} catch (IOException x) {
-		    System.err.format("IOException: %s%n", x);
+		} catch (Exception e) {
+		    e.printStackTrace();
 		}
 		
 		return result;

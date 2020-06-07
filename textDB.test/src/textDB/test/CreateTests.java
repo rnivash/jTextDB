@@ -2,20 +2,17 @@ package textDB.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
-
 import org.junit.jupiter.api.Test;
 
-import textDB.Read;
+import textDB.Create;
 import textDB.Model.Student;
 
-class ReadTests {
+class CreateTests {
 
+	
 	@Test
 	void test() {
-		ArrayList<String[]> test = Read.ReadData((new Student()).getClass());
-		
-		assertNotNull(test);
+		Create.InitFile(new Student().getClass());
 	}
 
 }
