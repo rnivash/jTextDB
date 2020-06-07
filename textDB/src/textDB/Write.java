@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class Write {
 	
@@ -13,7 +14,7 @@ public class Write {
 		Charset charset = Charset.forName("US-ASCII");
 		Path file = Paths.get(BaseFile.GetFullName(entityType));
 		
-		try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {			
+		try (BufferedWriter writer = Files.newBufferedWriter(file, charset, StandardOpenOption.APPEND)) {			
 			String s = BaseFile.Encode(values);
 			writer.write(s, 0, s.length());	
 			writer.newLine();

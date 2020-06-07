@@ -79,4 +79,34 @@ public class Notepad {
 
 	}
 
+	public static <T> void Delete(T entity)
+    {
+		try {
+			
+			Class<? extends Object> entityType = entity.getClass();
+	        List<? extends Object> deleteList = Select(entityType);
+	        Delete.DeleteFile(entityType);
+	        
+	        Field[] pinfo = entityType.getFields();
+	        for(int i=0;i<deleteList.size();i++) {
+	        	Object newT = deleteList.get(i);
+	        	boolean add = false;
+	        	for(int j=0;j<pinfo.length;j++) {
+	        		Field pi = pinfo[j];
+	        		if (!pi.get(newT).equals(pi.get(entity)))
+	                {
+	                    add = true;
+	                    break;
+	                }
+	        	}
+	            if (add)
+	            {
+	                InsertValue(newT);
+	            }
+	        }
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+    }
 }

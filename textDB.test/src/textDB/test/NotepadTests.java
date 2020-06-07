@@ -15,10 +15,18 @@ class NotepadTests {
 		stud.Age = 4;
 		stud.Grade = 10;
 		Notepad.InsertValue(stud);
+		
+		stud = new Student();
+		stud.Name = "Nivash";
+		stud.Age = 4;
+		stud.Grade = 10;
+		Notepad.InsertValue(stud);
+		
 		List<Student> ls = Notepad.Select(Student.class);
 		assertEquals(ls.get(0).Name, "Darshan");
 		assertEquals(ls.get(0).Age, 4);
 		assertEquals(ls.get(0).Grade, 10);
+		Notepad.Delete(stud);
 	}
 
 }
