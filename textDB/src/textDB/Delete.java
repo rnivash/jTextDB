@@ -11,7 +11,7 @@ public class Delete {
 		Path file = Paths.get(tableFullName);
 		try {
 			Files.deleteIfExists(file);
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

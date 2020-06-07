@@ -6,11 +6,11 @@ import textDB.Delete;
 import textDB.Model.Student;
 
 class DeleteTests {
-	
+
 	@Test
-	void test() {
-		Create.InitFile(new Student().getClass());
-		Delete.DeleteFile(new Student().getClass());
+	void Should_delete_file_if_exists() {
+		Create.InitFile(Student.class);
+		Delete.DeleteFile(Student.class);
 	}
 
 }
