@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 import textDB.Write;
 import textDB.Model.Student;
 
-class WriteTests {
-
-	
+class WriteTests {	
 
 	@Test
 	void test() {
