@@ -23,7 +23,7 @@ public class Notepad {
 			for (int i = 0; i < rawRecords.size(); i++) {
 				String[] rawData = rawRecords.get(i);
 				int index = 0;
-				T data = c.newInstance();
+				T data = c.getDeclaredConstructor().newInstance();
 
 				for (int j = 0; j < propertyInfos.length; j++) {
 					Field propertyInfo = propertyInfos[j];
